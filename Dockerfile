@@ -33,6 +33,7 @@ COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/flexdashboard.Rmd -O /srv/shiny-server/index.Rmd
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/dummyValues.csv -O /srv/shiny-server/dummyValues.csv
+RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/patientData.csv -O /srv/shiny-server/patientData.csv
 
 CMD ["/usr/bin/shiny-server.sh"]
 
