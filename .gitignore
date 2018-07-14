@@ -2,3 +2,5 @@
 mountpoints/apps/*
 !mountpoints/apps/index.html
 !mountpoints/apps/example-app
+
+\.DS_Store
