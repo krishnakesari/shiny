@@ -18,9 +18,10 @@ RUN apt-get update && apt-get install -y -t unstable \
     rm -f version.txt ss-latest.deb && \
     R -e "install.packages(c('shiny', \
                              'rmarkdown', \
-                             'lubridate', \
                              'flexdashboard', \
-                             'tidyverse'), repos='https://cran.rstudio.com/')" && \
+                             'lubridate', \
+                             'DT', \
+                             'dplyr'), repos='https://cran.rstudio.com/')" && \
     cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
     rm -rf /var/lib/apt/lists/*
 
