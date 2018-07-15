@@ -18,10 +18,9 @@ RUN apt-get update && apt-get install -y -t unstable \
     rm -f version.txt ss-latest.deb && \
     R -e "install.packages(c('shiny', \
                              'rmarkdown', \
-                             'data.table', \
-                             'DT', \
+                             'lubridate', \
                              'flexdashboard', \
-                             'lubridate'), repos='https://cran.rstudio.com/')" && \
+                             'tidyverse'), repos='https://cran.rstudio.com/')" && \
     cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
     rm -rf /var/lib/apt/lists/*
 
@@ -32,8 +31,9 @@ COPY shiny-server.sh /usr/bin/shiny-server.sh
 COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/flexdashboard.Rmd -O /srv/shiny-server/index.Rmd
-RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/dummyValues.csv -O /srv/shiny-server/dummyValues.csv
+RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/labData.csv -O /srv/shiny-server/labData.csv
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/patientData.csv -O /srv/shiny-server/patientData.csv
+RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/normValues.csv -O /srv/shiny-server/normValues.csv
 
 CMD ["/usr/bin/shiny-server.sh"]
 
