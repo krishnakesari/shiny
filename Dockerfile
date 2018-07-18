@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y -t unstable \
     sudo \
     gdebi-core \
     pandoc \
+    libssl-dev \
     pandoc-citeproc \
     libcurl4-gnutls-dev \
     libcairo2-dev/unstable \
@@ -20,8 +21,10 @@ RUN apt-get update && apt-get install -y -t unstable \
                              'rmarkdown', \
                              'flexdashboard', \
                              'lubridate', \
+                             'plotly', \
                              'DT', \
-                             'dplyr'), repos='https://cran.rstudio.com/')" && \
+                             'dplyr'), \
+                             repos='https://cran.rstudio.com/')" && \
     cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
     rm -rf /var/lib/apt/lists/*
 
