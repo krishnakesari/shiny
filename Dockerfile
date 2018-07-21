@@ -20,10 +20,11 @@ RUN apt-get update && apt-get install -y -t unstable \
     R -e "install.packages(c('shiny', \
                              'rmarkdown', \
                              'flexdashboard', \
+                             'dplyr', \
                              'lubridate', \
-                             'plotly', \
                              'DT', \
-                             'dplyr'), \
+                             'ggplot2', \
+                             'plotly'), \
                              repos='https://cran.rstudio.com/')" && \
     cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
     rm -rf /var/lib/apt/lists/*
