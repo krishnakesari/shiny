@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y -t unstable \
                              'dplyr', \
                              'lubridate', \
                              'DT', \
+                             'scales', \
                              'ggplot2', \
                              'plotly'), \
                              repos='https://cran.rstudio.com/')" && \
