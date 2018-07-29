@@ -38,6 +38,8 @@ COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/flexdashboard.Rmd -O /srv/shiny-server/index.Rmd
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/labData.csv -O /srv/shiny-server/labData.csv
+RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/labData.csv -O /srv/shiny-server/labData-Tests.csv
+RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/labData.csv -O /srv/shiny-server/labData-Tests-norm.csv
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/patientData.csv -O /srv/shiny-server/patientData.csv
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/normValues.csv -O /srv/shiny-server/normValues.csv
 
