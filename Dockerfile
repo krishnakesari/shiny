@@ -42,6 +42,6 @@ RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLa
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/labData.csv -O /srv/shiny-server/labData-Tests-norm.csv
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/patientData.csv -O /srv/shiny-server/patientData.csv
 RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/normValues.csv -O /srv/shiny-server/normValues.csv
-
+RUN wget https://raw.githubusercontent.com/s1lvester/shinyLabView/master/shinyLabView/manual.pdf -O /srv/shiny-server/manual.pdf
 CMD ["/usr/bin/shiny-server.sh"]
 
